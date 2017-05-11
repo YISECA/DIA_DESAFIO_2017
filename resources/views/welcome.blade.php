@@ -22,7 +22,7 @@
 
                     <div class="freebirdFormviewerViewHeaderTitleRow">
 
-                        <div class="freebirdFormviewerViewHeaderTitle" dir="auto" role="heading" aria-level="1"><font size="5" face="Comic Sans MS,arial,verdana">INSCRIPCIONES TORNEO DISTRITAL 20° FESTIVAL DE PORRAS IDRD, BOGOTÁ – 2017</font></div>
+                        <!--<div class="freebirdFormviewerViewHeaderTitle" dir="auto" role="heading" aria-level="1"><font size="5" face="Comic Sans MS,arial,verdana">FORMULARIO DE INSCRIPCIÓN DÍA DEL DESAFÍO 2017</font></div>-->
 
                     </div>
 <br>
@@ -73,13 +73,149 @@
                     </div>
 
                     <script src="public/Js/jquery.sldr.js"></script>
+                    <div class="freebirdFormviewerViewHeaderDescription" dir="auto">
+
+                        <!--<h2>Ubicación</h2>-->
+
+                        <p><font size="3">Los datos de inactividad física, comportamiento sedentarios y exceso de peso en la población de Bogotá han ido en aumento es así como la ENSIN 2010 (ICBF) muestra que la prevalencia de tiempo dedicado a ver televisión o jugar con video juegos de niños y niñas de 5 a 12 años en Bogotá (mayor a 2 horas) fue de 69.9% presentando una de las prevalencias más altas del país.
+                        Los niños, niñas y adolescentes de 13 a 17 años presentaron una prevalencia en Bogotá de 76.6%. En adultos en Bogotá de 18 a 64 años un 37,2% presento sobrepeso y un 14,1 % obesidad, sumados estamos ante un 51,3% de problemas de exceso de peso, sobrepasando el 48,5% del año 2005.
+                        Así mismo la prevalencia de obesidad abdominal por circunferencia de cintura en hombres y mujeres para el año 2010 muestra en Bogotá, en hombres el 43,4% y en mujeres el 60,7% , el incremento fue de 10% en hombres y de 12,4% en mujeres. </font></p>
+
+                        <center><h2><font size="5" face="Comic Sans MS,arial,verdana">DESCRIPCIÓN </font></h2></center>
+
+                        <p><font size="3">El Día del Desafío es una actividad dirigida a todos los habitantes de Bogotá, ​que ​ pretende movilizar el mayor número de participantes realizando actividad física, recreativas deportivas o cotidianas que impliquen movimiento durante 15 minutos continuos.
+                        Se compite con otra ciudad del mundo. Las actividades este año pretenden concientizar a la ciudadanía sobre la importancia de ​incluir la ​ actividad física, en la rutina diaria, disminuyendo comportamientos sedentarios relacionados con el incremento de las enfermedades cronicas. .</font></p>
+
+                       <center><h2><font size="5" face="Comic Sans MS,arial,verdana">FORMULARIO DE INSCRIPCIÓN DÍA DEL DESAFÍO 2017</font></h2></center>
+                        
 <br>
 
 <form method="POST" action="insertar" id="form_gen" enctype="multipart/form-data">  
 
             <div class="panel-body">
 
+<!-- nuevo formulario-->
 
+<div class="row">
+  <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Actividad Realizada:</label></div>
+   <div class="col-xs-6 col-sm-6"><select required name="actividad" id="actividad" class="form-control" >
+                                  <option value="0">Seleccionar</option>
+                                  <option value="Entrenamientos deportivos">Entrenamientos deportivos</option>
+                                  <option value="Campeonatos deportivos">Campeonatos deportivos</option>
+                                  <option value="Festivales recreativos">Festivales recreativos</option>
+                                  <option value="Entrenamientos militares">Entrenamientos militares</option>
+                                  <option value="Maratones atleticas">Maratones atléticas</option>
+                                  <option value="Deporte urbano y nuevas tendencias DUNT">Nuevas Tendencias</option>
+                                  <option value="Caminata">Caminata</option>
+                                  <option value="Trote o Carrera">Trote o Carrera</option>
+                                  <option value="Campañas ecológicas">Campañas ecológicas</option>
+                                  <option value="Clases de educacion fisica">Clases de educación física</option>
+                                  <option value="Recorrido en Bicicleta">Recorrido en Bicicleta</option>
+                                  <option value="Jornadas o clase de Baile">Jornadas o clase de Baile</option>
+                                  <option value="Actividades acuaticas">Actividades Acuáticas</option>
+                                  <option value="Pruebas de habilidades">Pruebas de habilidades</option>
+                                  <option value="Gimnasia Laboral">Gimnasia Laboral</option>                                                        
+                                  <option value="Actividades Físicas en Recreos">Actividades Físicas en Recreos en instituciones educativas</option>
+                                  <option value="Escuelas Deportivas">Escuelas Deportivas</option>
+                                  <option value="Subida y/o bajada de escaleras">Subida y/o bajada de escaleras</option>
+                                  <option value="Otro">Otro</option>
+ </select></div>
+</div>
+  
+  <br>
+  <div class="row">
+  <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">¿Cuál?:</label></div>
+   <div class="col-xs-6 col-sm-6"><input required type="text" class="form-control" id="direccion" name="direccion"></div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Tiempo</label></div>
+  <div class="col-md-1" align="left" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Horas</label></div>
+  <div class="col-md-2" align="left"><select  required name="torneo" id="torneo" class="form-control" >
+                <option value="" selected="selected">Minutos</option>
+                @foreach ($torneos as $torneo)
+                    <option value="{{ $torneo->id }}">{{ $torneo->torneo}}</option>
+                @endforeach
+            </select></div>
+  <div class="col-md-1" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Minutos</label></div>
+  <div class="col-md-2"><select  required name="torneo" id="torneo" class="form-control" >
+                <option value="" selected="selected">Minutos</option>
+                @foreach ($torneos as $torneo)
+                    <option value="{{ $torneo->id }}">{{ $torneo->torneo}}</option>
+                @endforeach
+            </select></div>
+</div>
+
+
+<br>
+<div class="row">
+  <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Persona quien coordina la actividad:</label></div>
+   <div class="col-xs-6 col-sm-6"><input required type="text" class="form-control" id="direccion" name="direccion"></div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Teléfono:</label></div>
+   <div class="col-xs-6 col-sm-6"><input required type="text" class="form-control" id="direccion" name="direccion"></div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Entidad/Grupo/Persona/Comunidad:</label></div>
+   <div class="col-xs-6 col-sm-6"><input required type="text" class="form-control" id="direccion" name="direccion"></div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Sector:</label></div>
+   <div class="col-xs-6 col-sm-6"><select  required name="torneo" id="torneo" class="form-control" >
+                <option value="" selected="selected">Minutos</option>
+                @foreach ($torneos as $torneo)
+                    <option value="{{ $torneo->id }}">{{ $torneo->torneo}}</option>
+                @endforeach
+            </select></div>
+</div>
+
+
+<br>
+<div class="row">
+  <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Localidad:</label></div>
+   <div class="col-xs-6 col-sm-6"><select  required name="localidad" id="localidad" class="form-control" >
+
+                <option value="">Seleccione</option>
+                 @foreach ($localidades as $localidad)
+                    <option value="{{ $localidad->id_localidad }}">{{ $localidad->localidad}}</option>
+                @endforeach
+
+            </select></div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Dirección:</label></div>
+   <div class="col-xs-6 col-sm-6"><input required type="text" class="form-control" id="direccion" name="direccion"></div>
+</div>
+
+
+<br>
+<div class="row">
+  <div class="col-md-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">N° de participantes:</label></div>
+  <div class="col-md-1" align="left" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Hombres:</label></div>
+  <div class="col-md-2" align="left"><input required type="text" class="form-control" id="direccion" name="direccion"></div>
+  <div class="col-md-1" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Mujeres:</label></div>
+  <div class="col-md-2"><input required type="text" class="form-control" id="direccion" name="direccion"></div>
+</div>
+
+<br>
+<div class="row">
+
+  <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 50px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Observaciones:</label></div>
+   <div class="col-xs-6 col-sm-6"><textarea id="textarea" name="textarea" rows="5" cols="66"></textarea></div>
+</div>
+
+
+<!-- viejo formulario
              <div class="row">
              <br>
                <div class="col-md-6">
@@ -303,7 +439,7 @@
 
 
 
-             </div>
+             </div>-->
 
          </fieldset>
 

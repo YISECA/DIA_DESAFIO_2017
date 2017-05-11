@@ -70,7 +70,7 @@
 
 
 
-      <title>FESTIVAL DE PORRAS 2017</title>
+      <title>DÍA DEL DESAFÍO 2017</title>
 
   </head>
 
@@ -154,7 +154,7 @@
 
                 <h1><font size="6" face="Comic Sans MS,arial,verdana">IDRD</font></h1>
 
-                <center<p class="lead"><h1><font size="6" face="Comic Sans MS,arial,verdana">FESTIVAL DE PORRAS 2017</font></h1></p>
+                <center<p class="lead"><h1><font size="6" face="Comic Sans MS,arial,verdana">DÍA DEL DESAFÍO 2017</font></h1></p>
 
               </div>
 
