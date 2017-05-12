@@ -130,7 +130,7 @@
 
 <br>
 <div class="row">
-  <div class="col-md-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Tiempo</label></div>
+  <div class="col-md-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Tiempo:</label></div>
   <div class="col-md-1" align="left" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Horas</label></div>
   <div class="col-md-2" align="left"><select  required name="torneo" id="torneo" class="form-control" >
                 <option value="" selected="selected">Minutos</option>
