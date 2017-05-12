@@ -2,22 +2,30 @@ jQuery(document).ready(function($) {
 
 $('#fecha_nacimiento').datepicker({dateFormat: 'yy-mm-dd',changeMonth: true,changeYear: true,yearRange: "-100:+0"});
 
- $('#tipo').val("");
-	$('select[data-readonly]').on('change', function(e){
+ $('select[data-readonly]').on('change', function(e){
 
-		var select = $(this).data('readonly');
-        var readonly_value = $(this).data('readonly-value');
+		var input = $(this).data('readonly');
+
+		var readonly_value = $(this).data('readonly-value');
+
+
 
 		if(readonly_value != $(this).val())
+
 		{
-			$('select[name="'+select+'"]').attr('disabled', 'disabled');
+
+			$('*[name="'+input+'"]').attr('readonly', 'readonly');
+
 		} else {
 
-			$('select[name="'+select+'"]').removeAttr('disabled');	
+			$('*[name="'+input+'"]').removeAttr('readonly');	
 
 		}
 
 	});
+
+
+
 
 
 

@@ -98,34 +98,34 @@
 
 <div class="row">
   <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Actividad Realizada:</label></div>
-   <div class="col-xs-6 col-sm-6"><select required name="actividad" id="actividad" class="form-control" >
+   <div class="col-xs-6 col-sm-6"><select required name="actividad" id="actividad" class="form-control" data-readonly="tipo_actividad" data-readonly-value="19">
                                   <option value="0">Seleccionar</option>
-                                  <option value="Entrenamientos deportivos">Entrenamientos deportivos</option>
-                                  <option value="Campeonatos deportivos">Campeonatos deportivos</option>
-                                  <option value="Festivales recreativos">Festivales recreativos</option>
-                                  <option value="Entrenamientos militares">Entrenamientos militares</option>
-                                  <option value="Maratones atleticas">Maratones atléticas</option>
-                                  <option value="Deporte urbano y nuevas tendencias DUNT">Nuevas Tendencias</option>
-                                  <option value="Caminata">Caminata</option>
-                                  <option value="Trote o Carrera">Trote o Carrera</option>
-                                  <option value="Campañas ecológicas">Campañas ecológicas</option>
-                                  <option value="Clases de educacion fisica">Clases de educación física</option>
-                                  <option value="Recorrido en Bicicleta">Recorrido en Bicicleta</option>
-                                  <option value="Jornadas o clase de Baile">Jornadas o clase de Baile</option>
-                                  <option value="Actividades acuaticas">Actividades Acuáticas</option>
-                                  <option value="Pruebas de habilidades">Pruebas de habilidades</option>
-                                  <option value="Gimnasia Laboral">Gimnasia Laboral</option>                                                        
-                                  <option value="Actividades Físicas en Recreos">Actividades Físicas en Recreos en instituciones educativas</option>
-                                  <option value="Escuelas Deportivas">Escuelas Deportivas</option>
-                                  <option value="Subida y/o bajada de escaleras">Subida y/o bajada de escaleras</option>
-                                  <option value="Otro">Otro</option>
+                                  <option value="1">Entrenamientos deportivos</option>
+                                  <option value="2">Campeonatos deportivos</option>
+                                  <option value="3">Festivales recreativos</option>
+                                  <option value="4">Entrenamientos militares</option>
+                                  <option value="5">Maratones atléticas</option>
+                                  <option value="6">Nuevas Tendencias</option>
+                                  <option value="7">Caminata</option>
+                                  <option value="8">Trote o Carrera</option>
+                                  <option value="9">Campañas ecológicas</option>
+                                  <option value="10">Clases de educación física</option>
+                                  <option value="11">Recorrido en Bicicleta</option>
+                                  <option value="12">Jornadas o clase de Baile</option>
+                                  <option value="13">Actividades Acuáticas</option>
+                                  <option value="14">Pruebas de habilidades</option>
+                                  <option value="15">Gimnasia Laboral</option>                                                        
+                                  <option value="16">Actividades Físicas en Recreos en instituciones educativas</option>
+                                  <option value="17">Escuelas Deportivas</option>
+                                  <option value="18">Subida y/o bajada de escaleras</option>
+                                  <option value="19">Otro</option>
  </select></div>
 </div>
   
   <br>
   <div class="row">
   <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">¿Cuál?:</label></div>
-   <div class="col-xs-6 col-sm-6"><input required type="text" class="form-control" id="direccion" name="direccion"></div>
+   <div class="col-xs-6 col-sm-6"><input required type="text" class="form-control" id="tipo_actividad" name="tipo_actividad"></div>
 </div>
 
 <br>
