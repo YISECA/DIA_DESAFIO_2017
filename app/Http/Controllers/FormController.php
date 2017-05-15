@@ -17,9 +17,7 @@ use Mail;
 class FormController extends BaseController
 
 {
-
    var $url;
-
    private function cifrar($M)
     {   
 
@@ -44,35 +42,20 @@ class FormController extends BaseController
     $tabla='<table id="lista">
 
         <thead>
-
            <tr>
-
              <th style="text-transform: capitalize;">id</th>
-
              <th style="text-transform: capitalize;">cedula</th>
-
              <th style="text-transform: capitalize;">tipo_documento</th>
-
              <th style="text-transform: capitalize;">primer_nombre</th>
-
              <th style="text-transform: capitalize;">segundo_nombre</th>
-
              <th style="text-transform: capitalize;">primer_apellido</th>
-
              <th style="text-transform: capitalize;">segundo_apellido</th>
-
              <th style="text-transform: capitalize;">genero</th>
-
              <th style="text-transform: capitalize;">fecha_nacimiento</th>
-
              <th style="text-transform: capitalize;">mail</th>
-
              <th style="text-transform: capitalize;">celular</th>
-
              <th style="text-transform: capitalize;">eps</th>          
-
             </tr>
-
         </thead>
 
         <tbody id="tabla">';
@@ -82,29 +65,17 @@ class FormController extends BaseController
 
      
        $tabla.='<tr><td>'.$value->id.'</td>';
-
        $tabla.='<td>'.$value->cedula.'</td>';
-
        $tabla.='<td>'.$value->tipo_documento.'</td>';
-
        $tabla.='<td>'.$value->primer_nombre.'</td>';
-
        $tabla.='<td>'.$value->segundo_nombre.'</td>';
-
        $tabla.='<td>'.$value->primer_apellido.'</td>';
-
        $tabla.='<td>'.$value->segundo_apellido.'</td>';
-
        $tabla.='<td>'.$value->genero.'</td>';
-
        $tabla.='<td>'.$value->fecha_nacimiento.'</td>';
-
        $tabla.='<td>'.$value->mail.'</td>';
-
        $tabla.='<td>'.$value->celular.'</td>';
-
        $tabla.='<td>'.$value->eps.'</td></tr>';
-
       }
 
       $tabla.='</tbody></table>';
@@ -138,46 +109,26 @@ public function logear(Request $request){
 
 //insertar
 
-public function insertar_participante(Request $request){
-    $id_equipo = $request->equipo;
-    $form = Form::with('rangoEdad')->find($id_equipo);
-    $data = [
-      'equipo' => $form,
-    ];
-
-    return view('form', $data);
-}
-
 public function insertar(Request $request){
 
       $post = $request->input();
-     $usuario = Form::where('nombre_institucion', $request->input('nombre_institucion'))->first(); 
-      if (!empty($usuario)) { return view('error',['error' => 'Esta Institución o equipo ya fue registrado!'] ); exit(); }
       $formulario = new Form([]);
 
         //envio de correo
 
       if($this->inscritos()<=50){
 
-        if(empty($request->tipo_colegio)){
-           $request->request->add(['tipo_colegio' => 0]);
-        }
 
       $this->store($formulario, $request->input());
 
       $id = $formulario->id;
-      Mail::send('email', ['id' => $id], function ($m) use ($request) {
-      $m->from('no-reply@idrd.gov.co', 'Registro Exitoso a este evento');
-      $m->to($request->input('mail'), $request->input('nombre_institucion'))->subject('Registro Exitoso Torneo!');
-
-        });
 
       }else{
       return view('error', ['error' => 'Lo sentimos el limite de inscritos fue superado!']);
 
       }
         //envio de correo
-        return view('error', ['error' => 'Registro insertado, por favor revise su correo para agregar los integrantes del equipo!']);
+        return view('error', ['error' => 'Registro exitoso']);
     }
 
 
@@ -197,50 +148,19 @@ public function insertar(Request $request){
     private function store($formulario, $input)
 
     {
-
-
-        $formulario['torneo'] = $input['torneo'];
-
-        $formulario['evento'] = $input['evento'];
-
-        $formulario['nivel'] = $input['nivel'];
-
-        $formulario['categoria'] = $input['categoria'];
-
-        $formulario['modalidad'] = $input['modalidad'];
-
-        $formulario['edad'] = $input['edad'];
-
-        $formulario['tipo'] = $input['tipo'];
-
-        $formulario['nombre_institucion'] = $input['nombre_institucion'];
-
-        $formulario['tipo_colegio'] = $input['tipo_colegio'];
-
-        $formulario['ciudad'] = $input['ciudad'];
-
-        $formulario['id_localidad'] = $input['localidad'];
-
-        $formulario['direccion'] = $input['direccion'];
-
+        $formulario['actividad'] = $input['actividad'];
+        $formulario['tipo_actividad'] = $input['tipo_actividad'];
+        $formulario['hora'] = $input['hora'];
+        $formulario['nombre_coordinador'] = $input['nombre_coordinador'];
         $formulario['telefono'] = $input['telefono'];
-
-        $formulario['mail'] = $input['mail'];
-
-        $formulario['representante'] = $input['representante'];
-
-        $formulario['cedula_representante'] = $input['cedula_representante'];
-
-        $formulario['entrenador'] = $input['entrenador'];
-
-        $formulario['cedula_entrenador'] = $input['cedula_entrenador'];
-
-        $formulario['mail_entrenador'] = $input['mail_entrenador'];
-
-        $formulario['telefono_entrenador'] = $input['telefono_entrenador'];
-
+        $formulario['entidad'] = $input['entidad'];
+        $formulario['sector'] = $input['sector'];
+        $formulario['localidad'] = $input['localidad'];
+        $formulario['direccion'] = $input['direccion'];
+        $formulario['hombres'] = $input['hombres'];
+        $formulario['mujeres'] = $input['mujeres'];
+         $formulario['observaciones'] = $input['observaciones'];
         $formulario->save();
-
 
 
         return $formulario;

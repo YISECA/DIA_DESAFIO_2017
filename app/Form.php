@@ -15,16 +15,7 @@ class Form extends Model
 {
 
     //
-  protected $table = 'porras_2017';
-
-
-
-
-   public function rangoEdad(){	
-
-	     return $this->belongsTo('App\Edad','edad');
-
-   }
+  protected $table = 'inscripciones_2017';
 
 
 
