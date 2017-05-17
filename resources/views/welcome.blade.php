@@ -50,7 +50,7 @@
                                 <li class="elmnt-one">                                 
 
 
-                                        <div class="wrap"><img src="public/Img/porras.jpg"  height="400">
+                                        <div class="wrap"><img src="public/Img/desafio.jpg"  height="400">
 
 
                                         </div>                                   
@@ -58,13 +58,13 @@
 
                                <li class="elmnt-two">
                                     
-                                        <div class="wrap"><img src="public/Img/porras1.jpg"  height="400">
+                                        <div class="wrap"><img src="public/Img/desafio1.jpg"  height="400">
                                         </div>                                 
                                 </li>
 
                                  <li class="elmnt-three">
                                     
-                                        <div class="wrap"><img src="public/Img/porras2.jpg"  height="400">
+                                        <div class="wrap"><img src="public/Img/desafio2.jpg"  height="400">
                                         </div>                                 
                                 </li>
                                  
@@ -113,28 +113,14 @@
 
 <div class="row">
   <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Actividad Realizada:</label></div>
-   <div class="col-xs-6 col-sm-6"><select required name="actividad" id="actividad" class="form-control" data-readonly="tipo_actividad" data-readonly-value="19">
-                                  <option value="0">Seleccione</option>
-                                  <option value="1">Entrenamientos Deportivos</option>
-                                  <option value="2">Campeonatos Deportivos</option>
-                                  <option value="3">Festivales Recreativos</option>
-                                  <option value="4">Entrenamientos Militares</option>
-                                  <option value="5">Maratones Atléticas</option>
-                                  <option value="6">Nuevas Tendencias</option>
-                                  <option value="7">Caminatas</option>
-                                  <option value="8">Trote o Carrera</option>
-                                  <option value="9">Campañas Ecológicas</option>
-                                  <option value="10">Clases de educación física</option>
-                                  <option value="11">Recorrido en Bicicleta</option>
-                                  <option value="12">Jornadas o clase de Baile</option>
-                                  <option value="13">Actividades Acuáticas</option>
-                                  <option value="14">Pruebas de habilidades</option>
-                                  <option value="15">Gimnasia Laboral</option>                                                        
-                                  <option value="16">Actividades físicas en recreos en instituciones educativas</option>
-                                  <option value="17">Escuelas Deportivas</option>
-                                  <option value="18">Subida y/o bajada de escaleras</option>
-                                  <option value="19">Otro</option>
- </select></div>
+   <div class="col-xs-6 col-sm-6"><select  required name="actividad" id="actividad" class="form-control" data-readonly="tipo_actividad" data-readonly-value="19" >
+
+                <option value="">Seleccione</option>
+                 @foreach ($actividades as $actividad)
+                    <option value="{{ $actividad->id_actividad}}">{{ $actividad->actividad}}</option>
+                @endforeach
+
+            </select></div>
 </div>
   
   <br>
