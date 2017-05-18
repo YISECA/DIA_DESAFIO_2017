@@ -9,10 +9,9 @@ class Localidad extends Model
     //
   protected $table = 'localidad';
   protected $primaryKey = 'id_localidad';
-
+  protected $fillable = ['localidad'];
+    
     public function forms(){
-
-   	return $this->hasMany('App\Form','localidad');
-
+   		return $this->hasMany('App\Form','localidad');
    }
 }

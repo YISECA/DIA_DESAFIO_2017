@@ -9,6 +9,7 @@ class Edad extends Model
     //
   protected $table = 'edad';
   protected $primaryKey = 'id_edad';
+  
 
   public function edad()
   {

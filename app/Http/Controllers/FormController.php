@@ -60,20 +60,16 @@ class FormController extends BaseController
         </thead>
 
         <tbody id="tabla">';
-  
-
- // $tabla.='<td>'.$value->localidades[0]['localidad'].'</td>';
 
       foreach ($acceso as $key => $value) 
-
       {
-  
-       $tabla.='<tr><td>'.$value->actividad.'</td>';
+   
+       $tabla.='<tr><td>'.$value->actividades['actividad'].'</td>';
        $tabla.='<td>'.$value->hora.'</td>';
        $tabla.='<td>'.$value->entidad.'</td>';
        $tabla.='<td>'.$value->sector.'</td>';
        $tabla.='<td>'.$value->direccion.'</td>';
-       $tabla.='<td>'.$value->localidad.'</td>';
+       $tabla.='<td>'.$value->localidades['localidad'].'</td>';
        $tabla.='<td>'.$value->nombre_coordinador.'</td>';
        $tabla.='<td>'.$value->telefono.'</td>';
        $tabla.='<td>'.$value->hombres.'</td>';

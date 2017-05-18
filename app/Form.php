@@ -7,15 +7,17 @@ class Form extends Model
 
 {    //
   protected $table = 'inscripciones_2017';
+  protected $primaryKey = 'id';
+  protected $fillable = ['localidad','actividad'];
 
   public function localidades()
    {
-       return $this->hasMany('App\Localidad','id_localidad');
+       return $this->belongsTo('App\Localidad','localidad');
    }
 
    public function actividades()
    {
-       return $this->hasMany('App\Actividad','id_actividad');
+       return $this->belongsTo('App\Actividad','actividad');
    }
 }
 
