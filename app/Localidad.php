@@ -12,7 +12,7 @@ class Localidad extends Model
 
     public function forms(){
 
-   	return $this->hasMany('App\Form','id_localidad');
+   	return $this->hasMany('App\Form','localidad');
 
    }
 }

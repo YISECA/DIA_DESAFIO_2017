@@ -12,7 +12,7 @@ class Actividad extends Model
 
     public function forms(){
 
-   	return $this->hasMany('App\Form','id_actividad');
+   	return $this->hasMany('App\Form','actividad');
 
    }
 }

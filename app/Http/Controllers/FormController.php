@@ -37,24 +37,25 @@ class FormController extends BaseController
 
     public function listar_datos(){
 
-    $acceso = Form::whereYear('created_at', '=', date('Y'))->get(); 
+    $acceso = Form::with('localidades','actividades')->whereYear('created_at', '=', date('Y'))->get(); 
+
 
     $tabla='<table id="lista">
-
+<center><h3><font size="5" face="Comic Sans MS,arial,verdana"> CONSULTA EVENTOS REGISTRADOS DÍA DEL DESAFÍO 2017</font></h3></center>
         <thead>
            <tr>
-             <th style="text-transform: capitalize;">id</th>
-             <th style="text-transform: capitalize;">cedula</th>
-             <th style="text-transform: capitalize;">tipo_documento</th>
-             <th style="text-transform: capitalize;">primer_nombre</th>
-             <th style="text-transform: capitalize;">segundo_nombre</th>
-             <th style="text-transform: capitalize;">primer_apellido</th>
-             <th style="text-transform: capitalize;">segundo_apellido</th>
-             <th style="text-transform: capitalize;">genero</th>
-             <th style="text-transform: capitalize;">fecha_nacimiento</th>
-             <th style="text-transform: capitalize;">mail</th>
-             <th style="text-transform: capitalize;">celular</th>
-             <th style="text-transform: capitalize;">eps</th>          
+             <th style="text-transform: capitalize;">Actividad</th>
+             <th style="text-transform: capitalize;">Hora</th>
+             <th style="text-transform: capitalize;">Entidad</th>
+             <th style="text-transform: capitalize;">Sector</th>
+             <th style="text-transform: capitalize;">Dirección</th>
+             <th style="text-transform: capitalize;">Localidad</th>
+             <th style="text-transform: capitalize;">Coordinador</th>
+             <th style="text-transform: capitalize;">Teléfono</th>
+             <th style="text-transform: capitalize;">Hombres</th>
+             <th style="text-transform: capitalize;">Mujeres</th>
+             <th style="text-transform: capitalize;">Total</th>
+             <th style="text-transform: capitalize;">Observaciones</th>          
             </tr>
         </thead>
 
@@ -62,20 +63,19 @@ class FormController extends BaseController
 
       foreach ($acceso as $key => $value) 
       {
-
-     
-       $tabla.='<tr><td>'.$value->id.'</td>';
-       $tabla.='<td>'.$value->cedula.'</td>';
-       $tabla.='<td>'.$value->tipo_documento.'</td>';
-       $tabla.='<td>'.$value->primer_nombre.'</td>';
-       $tabla.='<td>'.$value->segundo_nombre.'</td>';
-       $tabla.='<td>'.$value->primer_apellido.'</td>';
-       $tabla.='<td>'.$value->segundo_apellido.'</td>';
-       $tabla.='<td>'.$value->genero.'</td>';
-       $tabla.='<td>'.$value->fecha_nacimiento.'</td>';
-       $tabla.='<td>'.$value->mail.'</td>';
-       $tabla.='<td>'.$value->celular.'</td>';
-       $tabla.='<td>'.$value->eps.'</td></tr>';
+   
+       $tabla.='<tr><td>'.$value->actividades[0]['actividad'].'</td>';
+       $tabla.='<td>'.$value->hora.'</td>';
+       $tabla.='<td>'.$value->entidad.'</td>';
+       $tabla.='<td>'.$value->sector.'</td>';
+       $tabla.='<td>'.$value->direccion.'</td>';
+       $tabla.='<td>'.$value->localidades[0]['localidad'].'</td>';
+       $tabla.='<td>'.$value->nombre_coordinador.'</td>';
+       $tabla.='<td>'.$value->telefono.'</td>';
+       $tabla.='<td>'.$value->hombres.'</td>';
+       $tabla.='<td>'.$value->mujeres.'</td>';
+       $tabla.='<td>'.($value->mujeres+$value->hombres).'</td>';
+       $tabla.='<td>'.$value->observaciones.'</td></tr>';
       }
 
       $tabla.='</tbody></table>';
@@ -97,13 +97,6 @@ public function logear(Request $request){
       $_SESSION['id_usuario'] = json_encode($acceso);
       return view('admin'); exit();       
 
-    }
-
-
-    private function obtener_edad($date) {
-
-     list($Y,$m,$d) = explode("-",$date);
-     return( date("md") < $m.$d ? date("Y")-$Y-1 : date("Y")-$Y );
     }
 
 
