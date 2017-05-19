@@ -8,7 +8,7 @@ button { margin-top: 10px; }
 
 ul {
 
-	color: #ECECEC;
+	color: #000000;
 
 	text-align: center;
 
@@ -36,7 +36,7 @@ p {
 
 a {
 
-	color: #c48ec8;
+	color: #00ade6;
 
 	-webkit-transition: color 0.25s cubic-bezier(0.860, 0.000, 0.070, 1.000); 
 

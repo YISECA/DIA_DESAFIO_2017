@@ -134,8 +134,9 @@
   <div class="col-xs-6 col-sm-4" align="right" style="position: relative;top: 8px;"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">Hora:</label></div>
    <div class="col-xs-6 col-sm-6"> 
       <div class='input-group date' id='horas'>
-        <input type='text' class="form-control" id="hora" name="hora" /><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+        <input type='text' class="form-control" id="hora" name="hora" placeholder="click en el reloj para agregar hora" /><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
       </div>
+
    </div>
 </div>
 
@@ -224,12 +225,7 @@
 
 
                             </font>
-   <script src="{{ asset('public/Js/jquery.min.js') }}"></script>
-   <script src="{{ asset('public/Js/moment.js') }}"></script>
-   <script src="{{ asset('public/Js/bootstrap.min.js') }}"></script>
-   <script src="{{ asset('public/Js/bootstrap-datetimepicker.min.js') }}"></script>
-   <script src="{{ asset('public/Css/bootstrap.min.css') }}"></script>
-   <script src="{{ asset('public/Css/bootstrap-datetimepicker.min.css') }}"></script>
+   
   <script type="text/javascript">
             $(function () {
                 $('#horas').datetimepicker({
@@ -237,9 +233,20 @@
                 });
             });
         </script>
+
+   
+   <script src="{{ asset('public/Js/moment.js') }}"></script>
+   <script src="{{ asset('public/Js/bootstrap.min.js') }}"></script>
+   <script src="{{ asset('public/Js/bootstrap-datetimepicker.min.js') }}"></script>
+   <script src="{{ asset('public/Css/bootstrap.min.css') }}"></script>
+   <script src="{{ asset('public/Css/bootstrap-datetimepicker.min.css') }}"></script>
+
+
+
             </form>
 
-                      <!--  </ul> <a class="btn btn-info" href="registro">Registrarse</a>--></div>
+           
+</div>
 
                 </div>
 
